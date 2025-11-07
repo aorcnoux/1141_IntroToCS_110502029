@@ -9,19 +9,16 @@
 <form>
 <table border="1" width="800" cellpadding="8">
 
-  <!-- 第一列：跨三欄 -->
   <tr>
     <th colspan="3" align="center">About -- 110502029</th>
   </tr>
 
-  <!-- 第二列：左邊圖片跨三列；右邊整塊 Name + Gender -->
   <tr>
     <td rowspan="3" align="center" width="210">
       <img src="ts.jpg" width="150" alt="personal photo"><br>
       personal photo
     </td>
 
-    <!-- Name + Gender 放在同一格（不分割，不加外框） -->
     <td colspan="2">
       Name: <input type="text" name="name"><br><br>
       Gender:
@@ -31,9 +28,8 @@
     </td>
   </tr>
 
-  <!-- 第三列：County（第2欄） | Birthday（第3欄） -->
+
   <tr>
-    <!-- 這一列直接分成兩格，不再用巢狀 table -->
     <td>
       County:
       <select name="county">
@@ -49,14 +45,12 @@
     </td>
   </tr>
 
-  <!-- 第四列：Email（整塊，不要外框） -->
   <tr>
     <td colspan="2">
       E-mail: <input type="email" name="email">
     </td>
   </tr>
 
-  <!-- 下半：Hobby -->
   <tr>
     <td>Hobby</td>
     <td colspan="2">
@@ -68,7 +62,6 @@
     </td>
   </tr>
 
-  <!-- Skill -->
   <tr>
     <td>Skill</td>
     <td colspan="2">
@@ -80,7 +73,6 @@
     </td>
   </tr>
 
-  <!-- Say Something -->
   <tr>
     <td>Say Something</td>
     <td colspan="2">
@@ -88,7 +80,6 @@
     </td>
   </tr>
 
-  <!-- Submit -->
   <tr>
     <td colspan="3">
       <input type="submit" value="提交">
