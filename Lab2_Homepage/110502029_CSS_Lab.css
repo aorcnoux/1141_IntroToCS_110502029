@@ -47,7 +47,7 @@ body {
     position: relative;
     top: 0em;
     left: 0em;
-    width: 70em;               
+    width: 100em;               
     max-width: 100%;
 }
 
@@ -57,7 +57,7 @@ body {
 
 .navbar > li > a {
     display: block;
-    padding: 6px 40px;           
+    padding: 6px 70px;           
     text-decoration: none;
     color: white;
     font-weight: bold;
