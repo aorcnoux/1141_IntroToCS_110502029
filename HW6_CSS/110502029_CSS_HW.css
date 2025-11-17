@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.main-container {
+  width: 1000px;             
+  max-width: 100%;
+  margin: 40px auto;         
+  background-color: #ffffff; 
+  border-radius: 16px;      
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
+  display: flex;             
+  overflow: hidden;          
+}
+
+.left-panel {
+  flex: 0 0 30%;
+  background: linear-gradient(180deg, #1dbab4, #1561ad); 
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel {
+  flex: 0 0 70%;
+  padding: 24px 32px;
+  background-color: #fafafa;
+}
+
+.photo-panel {
+  width: 100%;
+}
+
+.photo-panel img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.text-content {
+  padding: 2px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.name-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.sub-title {
+  font-size: 15px;
+  color: #e3e8f0;
+  margin-bottom: 16px;  
+}
+
+.section-heading {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 4px;
+}
+
+.left-panel p {
+  color: #e4f1fe;
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 3px 0; 
+}
+
+.nccu-logo {
+  margin-top: 30px;
+  width: 140px; 
+}
+
+.text-content a {
+  color: #ffeb3b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.text-content a:hover {
+  text-decoration: underline;
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin: 0 0 10px;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid #d4d9e2;
+  color: #333;
+}
+
+.section p {
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+
+.edu-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.year {
+  font-weight: bold;
+  width: 150px; 
+}
+
+.description {
+  font-weight: normal;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 4px 8px 4px 0;
+  border-radius: 999px;
+  background-color: #e6f2ff; 
+  color: #0b4a8a;      
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+.hw-lab-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap; 
+}
+
+.hw-column,
+.lab-column {
+  flex: 1 1 0;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+.hw-column h3,
+.lab-column h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.hw-column ul,
+.lab-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hw-column li,
+.lab-column li {
+  margin-bottom: 6px;
+}
+
+.hw-column a,
+.lab-column a {
+  text-decoration: none;
+  color: #1d6ecf;
+  font-weight: 500;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.hw-column a:hover,
+.lab-column a:hover {
+  color: #0b4a8a;
+  transform: translateX(1px);
+}
+
+.music-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;               
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.music-item {
+  flex: 1 1 calc(25% - 12px);  
+  max-width: 25%;
+  text-align: center;
+  color: #333;
+}
+
+.music-item a {
+  text-decoration: none;       
+  display: inline-block;
+}
+
+.music-item img {
+  width: 100%;
+  max-width: 160px;              
+  aspect-ratio: 1 / 1;      
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.music-item a:hover img {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
+}
+
+.music-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+}
+
+.music-note {
+  padding-top: 28px;
+  font-size: 1.15rem;
+  font-family: 'Dancing Script', cursive;
+  font-style: normal;
+  color: #555;
+  line-height: 1.6;
+  pointer-events: none;
+}
+
+.music-note a {
+  text-decoration: none !important;
+  color: inherit !important;
+  pointer-events: none !important;
+}
+
+.right-panel a {
+  color: #1565c0;
+  text-decoration: none;
+}
+
+.right-panel a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: 0 0 100%;
+  }
+
+  .music-item {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
