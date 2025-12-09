@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1A2B Game</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: linear-gradient(135deg, #e0f0ff, #f9e6ff);
+    }
+
+    h1 {
+        text-align: center;
+        color: #2b4c7e;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 14px;
+        margin-bottom: 6px;
+        display: block;
+        color: #333;
+    }
+
+    input[type="text"] {
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #ccd6e0;
+        font-size: 16px;
+        width: 200px;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="text"]:focus {
+        border-color: #4f8df5;
+        box-shadow: 0 0 0 3px rgba(79, 141, 245, 0.25);
+    }
+
+    button {
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: none;
+        background: #4f8df5;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        margin-left: 6px;
+        transition: background 0.2s, transform 0.1s;
+    }
+
+    button:hover {
+        background: #3a76d8;
+    }
+
+    button:active {
+        transform: translateY(1px);
+    }
+
+    #attemptInfo {
+        background: #f3f7ff;
+        border: 1px solid #d8e2f5;
+        padding: 10px;
+        width: fit-content;
+        border-radius: 8px;
+        margin-top: 15px;
+        color: #2b4c7e;
+    }
+
+    #history {
+        margin-top: 20px;
+        background: #ffffffcc;
+        border: 1px solid #e1e5ee;
+        border-radius: 10px;
+        padding: 12px;
+        max-width: 320px;
+        min-height: 60px;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    #history p {
+        margin: 5px 0;
+        padding: 6px 10px;
+        background: #fff;
+        border-radius: 6px;
+        border: 1px solid #edf0f7;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>110502029_HW7_1A2B</h1>
+
+<div>
+    <label for="guessInput">Enter 4 unique numbers：</label>
+    <input type="text" id="guessInput" maxlength="4">
+    <button onclick="play()">Guess!</button>
+</div>
+
+<p id="attemptInfo">目前嘗試次數：0</p>
+
+<div id="history"></div>
+
+<script>
+var answer = generateAnswer();
+var attempts = 0;
+var gameOver = false;
+
+function generateAnswer() {
+    var digits = ['0','1','2','3','4','5','6','7','8','9'];
+    var result = [];
+    while (result.length < 4) {
+        var index = Math.floor(Math.random() * digits.length);
+        result.push(digits[index]);
+        digits.splice(index, 1);
+    }
+    return result.join('');
+}
+
+function isValid(str) {
+    if (str.length !== 4) {
+        alert("Check if the input consists of exactly 4 digits.");
+        return false;
+    }
+    for (var i = 0; i < str.length; i++) {
+        var c = str.charAt(i);
+        if (c < '0' || c > '9') {
+            alert("Please enter digits only (0–9)!");
+            return false;
+        }
+    }
+    for (var i = 0; i < str.length; i++) {
+        for (var j = i + 1; j < str.length; j++) {
+            if (str.charAt(i) === str.charAt(j)) {
+                alert("Check if there are any duplicate digits.");
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+function checkAB(guess, ans) {
+    var a = 0;
+    var b = 0;
+    var gArr = guess.split("");
+    var aArr = ans.split("");
+    for (var i = 0; i < 4; i++) {
+        if (gArr[i] === aArr[i]) {
+            a++;
+        } else if (aArr.indexOf(gArr[i]) !== -1) {
+            b++;
+        }
+    }
+    return a + "A" + b + "B";
+}
+
+function play() {
+    if (gameOver) {
+        alert("遊戲已結束，請重新整理頁面再玩一次：）");
+        return;
+    }
+
+    var inputField = document.getElementById("guessInput");
+    var guess = inputField.value.trim();
+
+    if (!isValid(guess)) {
+        inputField.value = "";
+        return;
+    }
+
+    attempts++;
+    document.getElementById("attemptInfo").textContent = "目前嘗試次數：" + attempts;
+
+    var result = checkAB(guess, answer);
+
+    var historyDiv = document.getElementById("history");
+    var p = document.createElement("p");
+    p.textContent = "第 " + attempts + " 次：" + guess + " → " + result;
+    historyDiv.appendChild(p);
+
+    if (guess === answer) {
+        alert("答對了～～總共猜了 " + attempts + " 次。");
+        gameOver = true;
+    }
+
+    inputField.value = "";
+    inputField.focus();
+}
+</script>
+
+</body>
+</html>
