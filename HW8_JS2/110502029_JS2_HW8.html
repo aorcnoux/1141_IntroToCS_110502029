@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator-card">
+        <h1 class="title">JS Calculator</h1>
+
+        <div class="form-group">
+            <label for="number1">Number 1</label>
+            <input id="number1" type="number" step="any" placeholder="Enter first number">
+        </div>
+
+        <div class="form-group">
+            <label for="number2">Number 2</label>
+            <input id="number2" type="number" step="any" placeholder="Enter second number">
+        </div>
+
+        <div class="form-group">
+            <label for="operator">Operate way?</label>
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+        </div>
+
+        <button id="calcBtn" type="button">Add</button>
+
+        <p id="result" class="result-text">Result = -</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
